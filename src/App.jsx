@@ -34,24 +34,25 @@ function App() {
       <div className='container-news'>
 {topStories.map((story, index) => (
          <li key={index} className="list-group-item card-li">
-<img className="card-img-top" src={story.multimedia[1].url} alt={story.multimedia[1].copyright} />
-<div className="card-body">
-   <h5 className="card-title">{story.title}</h5>
-   <span>Section: {story.section}</span>
+<img className="card-img-top object-cover h-48 w-full" src={story.multimedia[1].url} alt={story.multimedia[1].copyright} />
+<div className="card-body p-6">
+   <h5 className="card-title text-lg font-medium">{story.title}</h5>
+   <span className="text-gray-500">Seção: {story.section}</span>
   <br />
-  <p className="card-text">{story.abstract}</p>
-  
-  <a href={story.url} className="btn btn-success" target="_blank">Leia mais</a>
+  <p className="card-text text-gray-700">{story.abstract}</p>
+<a href={story.url} className="bg-green-500 text-white p-2 rounded-md hover:bg-green-600" target="_blank">Leia mais</a>
+
 </div>
        </li>
       ))}
-
-      </div>
+</div>
+      
       <footer>
         <a href="https://ruanfr.com"><h3>Freito por Ruan Freire</h3></a>
       </footer>
     </div>
   )
+
 }
 
 export default App
